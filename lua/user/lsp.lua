@@ -17,7 +17,6 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
   end
 end
 
-
 -- Typescript config using typescript.nvim
 ts.setup({
   server = {
@@ -27,16 +26,12 @@ ts.setup({
   },
 })
 
--- -- Keeping this here for reference
--- require("lvim.lsp.manager").setup("tsserver", {
---   root_dir = require('lspconfig.util').root_pattern('.git'),
---   on_attach = common_on_attach,
---   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" },
---   cmd = {
---     "typescript-language-server",
---     "--stdio",
---   },
--- })
+-- Vue config using vue.ls
+local vue = require('lspconfig').vuels
+vue.setup({
+  capabilities = common_capabilities,
+  on_attach = common_on_attach,
+})
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup({
@@ -47,7 +42,7 @@ formatters.setup({
       "javascriptreact",
       "typescript",
       "typescriptreact",
-      "vue",
+      "vue", -- Add .vue file type
       "css",
       "scss",
       "less",
@@ -60,18 +55,19 @@ formatters.setup({
       "json",
     }
   },
+  {
+    command = "rustfmt", filetypes = { "rust" }
+  },
 })
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup({
   {
     command = "eslint_d",
-    filetypes = { "javascript", "typescript", "typescriptreact", "json" }
+    filetypes = { "javascript", "typescript", "typescriptreact", "vue", "json" }
   },
 })
 
-lvim.lsp.diagnostics.float.max_width = 120
-lvim.lsp.diagnostics.float.focusable = true
 
 lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
 table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
