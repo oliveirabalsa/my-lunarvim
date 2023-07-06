@@ -15,6 +15,7 @@ lvim.plugins = {
   { 'jose-elias-alvarez/typescript.nvim' },
   { 'mg979/vim-visual-multi' },
   { "Mofiqul/dracula.nvim" },
+  { 'editorconfig/editorconfig-vim' },
   { 'lunarvim/lunar.nvim' },
   { "morhetz/gruvbox" },
   {

@@ -54,3 +54,5 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 lvim.builtin.telescope.defaults.path_display = {
   shorten = 4,
 }
+
+vim.opt.fileformat = "unix"

@@ -26,23 +26,16 @@ ts.setup({
   },
 })
 
--- Vue config using vue.ls
-local vue = require('lspconfig').vuels
-vue.setup({
-  capabilities = common_capabilities,
-  on_attach = common_on_attach,
-})
-
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup({
   {
-    command = "prettierd",
+    command = "prettier",
     filetypes = {
       "javascript",
       "javascriptreact",
       "typescript",
       "typescriptreact",
-      "vue", -- Add .vue file type
+      "vue",
       "css",
       "scss",
       "less",
@@ -63,7 +56,7 @@ formatters.setup({
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup({
   {
-    command = "eslint_d",
+    command = "eslint",
     filetypes = { "javascript", "typescript", "typescriptreact", "vue", "json" }
   },
 })
