@@ -18,7 +18,7 @@ local themes = {
   dracula = "dracula"
 }
 
-lvim.transparent_window = true
+lvim.transparent_window = false
 lvim.colorscheme = themes.dracula
 
 local extra_opts = {

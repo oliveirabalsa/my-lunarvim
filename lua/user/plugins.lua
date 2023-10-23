@@ -18,6 +18,8 @@ lvim.plugins = {
   { 'editorconfig/editorconfig-vim' },
   { 'lunarvim/lunar.nvim' },
   { "morhetz/gruvbox" },
+  { 'jparise/vim-graphql' },
+  { 'f-person/git-blame.nvim' },
   {
     "brenoprata10/nvim-highlight-colors",
     config = function()

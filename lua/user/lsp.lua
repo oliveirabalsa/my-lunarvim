@@ -17,6 +17,8 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
   end
 end
 
+vim.opt.clipboard = "unnamedplus"
+
 -- Typescript config using typescript.nvim
 ts.setup({
   server = {
@@ -29,7 +31,7 @@ ts.setup({
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup({
   {
-    command = "prettier",
+    command = "prettierd",
     filetypes = {
       "javascript",
       "javascriptreact",
@@ -56,9 +58,13 @@ formatters.setup({
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup({
   {
-    command = "eslint",
+    command = "eslint_d",
     filetypes = { "javascript", "typescript", "typescriptreact", "vue", "json" }
   },
+})
+require("lvim.lsp.manager").setup("tailwindcss", {
+  filetypes = { "html", "vue", "typescriptreact", "javascriptreact", "typescript" },
+  root_dir = require('lspconfig.util').root_pattern("tailwind.config.js", ".git")
 })
 
 

@@ -15,17 +15,6 @@ end
 
 nkeymap("zs", ":lua require'telescope.builtin'.spell_suggest()<cr>")
 
--- these are totally unnecessary (except the last one)
-ikeymap("<C-o>l", "<C-k>->")
-ikeymap("<C-o>h", "<C-k><-")
-ikeymap("<C-o>k", "<C-k>-!")
-ikeymap("<C-o>j", "<C-k>-v")
-ikeymap("<C-o>H", "<C-k>cH")
-ikeymap("<C-o>s", "<C-k>*2")
-ikeymap("<C-o>c", "<C-k>Co")
-ikeymap("<C-o>ok", "<C-k>OK")
-ikeymap("<C-o>r", "🚀")
-
 local hop_ok, hop = pcall(require, 'hop')
 if hop_ok then
   local directions = require('hop.hint').HintDirection
