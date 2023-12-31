@@ -19,7 +19,7 @@ local themes = {
 }
 
 lvim.transparent_window = false
-lvim.colorscheme = themes.dracula
+lvim.colorscheme = themes.edge
 
 local extra_opts = {
   sonokai = {

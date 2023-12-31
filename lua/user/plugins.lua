@@ -12,6 +12,7 @@ lvim.plugins = {
     end,
   },
 
+  { "pocco81/auto-save.nvim" },
   { 'jose-elias-alvarez/typescript.nvim' },
   { 'mg979/vim-visual-multi' },
   { "Mofiqul/dracula.nvim" },

@@ -10,6 +10,13 @@ lvim.keys.normal_mode["<S-x>"] = ":BufferKill<CR>"
 lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
 lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
 lvim.keys.normal_mode["<C-a>"] = "ggVG"
+
+-- open terminal
+lvim.keys.normal_mode["\\"] = ":ToggleTerm<CR>"
+
+-- open terminal error
+lvim.keys.normal_mode["|"] = ":TroubleToggle<CR>"
+
 vim.opt.relativenumber = true
 
 vim.keymap.set('n', 'gn', ":tabe %<CR>")

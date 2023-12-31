@@ -1,12 +1,38 @@
 {
   "named-arrow-function": {
     "prefix": "caf",
-    "body": "const ${1:functionName} = (${2:arg}): ${3:returnType} => {\n  ${4}\n}",
+    "body": [
+      "const ${1} = () => {",
+      " return (",
+      "   ${2}",
+      " )",
+      "}"
+    ],
+    "description": "Create a named arrow function"
+  },
+"named-arrow-function-props": {
+    "prefix": "cafp",
+    "body": [
+      "const ${1} = (props: ${2}Props) => {",
+      " return (",
+      "   ${3}",
+      " )",
+      "}"
+    ],
     "description": "Create a named arrow function"
   },
   "named-function": {
     "prefix": "cnf",
-    "body": "function ${1:functionName}(${2:arg}) {\n  ${3}\n}",
+    "body": [
+      "function ${1}() {",
+      " return (",
+      "   ${2}",
+      " )",
+      "}",
+      "",
+      "export default ${1}",
+      ""
+    ]
     "description": "Create a named function"
   }
 }

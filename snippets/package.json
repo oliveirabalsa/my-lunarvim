@@ -13,6 +13,14 @@
       {
         "language": "javascript",
         "path": "./typescript.json"
+      },
+ {
+        "language": "typescript",
+        "path": "./tests.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./tests.json"
       }
     ]
   }
