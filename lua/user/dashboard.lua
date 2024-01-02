@@ -23,7 +23,7 @@ if vim.fn.has "linux" == 1 or vim.fn.has "mac" == 1 then
   local thingy = io.popen 'echo "$(date +%a) $(date +%d) $(date +%b)" | tr -d "\n"'
   date = thingy:read "*a"
   thingy:close()
-  plugins = plugins:gsub("^%s*(.-)%s*$", "%1")
+  plugins = "∞"
 else
   plugins = "N/A"
   date = "  whatever "
@@ -31,7 +31,7 @@ end
 
 local plugin_count = {
   type = "text",
-  val = "└─ " .. kind.cmp_kind.Module .. " " .. plugins .. " plugins in total ─┘",
+  val = "└─ " .. kind.icons.magic .. " " .. plugins .. " plugins in total ─┘",
   opts = {
     position = "center",
     hl = "String",
@@ -47,17 +47,17 @@ local heading = {
   },
 }
 
-local fortune = require "alpha.fortune" ()
--- fortune = fortune:gsub("^%s+", ""):gsub("%s+$", "")
-local footer = {
-  type = "text",
-  val = fortune,
-  opts = {
-    position = "center",
-    hl = "Comment",
-    hl_shortcut = "Comment",
-  },
-}
+-- local fortune = require "alpha.fortune" ()
+-- -- fortune = fortune:gsub("^%s+", ""):gsub("%s+$", "")
+-- local footer = {
+--   type = "text",
+--   val = fortune,
+--   opts = {
+--     position = "center",
+--     hl = "Comment",
+--     hl_shortcut = "Comment",
+--   },
+-- }
 
 local function button(sc, txt, keybind)
   local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
@@ -121,7 +121,7 @@ lvim.builtin.alpha.custom = {
     layout = {
       { type = "padding", val = 1 },
       section.header,
-      { type = "padding", val = 2 },
+      { type = "padding", val = -3 },
       section.heading,
       section.plugin_count,
       { type = "padding", val = 1 },

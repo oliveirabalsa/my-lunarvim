@@ -1,8 +1,8 @@
 if vim.g.neovide then
   vim.opt.guifont = "MonoLisa:h24"
 
-  vim.g.neovide_transparency = 1
-  vim.g.transparency = 0.8
+  vim.g.neovide_transparency = 0.6
+  vim.g.transparency = 0.6
   vim.g.neovide_scroll_animation_length = 0.3
   vim.g.neovide_refresh_rate = 60
   vim.g.neovide_confirm_quit = true
@@ -28,8 +28,10 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 lvim.builtin.terminal.active = true
+lvim.builtin.nvimtree.setup.view.adaptive_size = true
 lvim.builtin.nvimtree.setup.view.side = "right"
-lvim.builtin.nvimtree.setup.view.width = 25
+lvim.builtin.nvimtree.setup.git.enable = true
+-- lvim.builtin.nvimtree.setup.view.width = "fit_content"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.nvimtree.setup.filters.custom = {}
 

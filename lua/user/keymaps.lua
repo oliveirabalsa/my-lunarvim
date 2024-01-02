@@ -19,6 +19,14 @@ lvim.keys.normal_mode["|"] = ":TroubleToggle<CR>"
 
 vim.opt.relativenumber = true
 
+-- navigate through a word and enter in insert mode
+vim.keymap.set('n', 'sc', function()
+  vim.cmd([[:HopWord]])
+  vim.schedule(function()
+    vim.cmd([[startinsert]])
+  end)
+end)
+
 vim.keymap.set('n', 'gn', ":tabe %<CR>")
 lvim.lsp.buffer_mappings.normal_mode["gr"] = {
   ":lua require'telescope.builtin'.lsp_references()<cr>",

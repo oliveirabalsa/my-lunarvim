@@ -1,7 +1,6 @@
 lvim.plugins = {
   {
     "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
     event = "InsertEnter",
     config = function()
       require("copilot").setup({
@@ -11,16 +10,19 @@ lvim.plugins = {
       })
     end,
   },
-
-  { "pocco81/auto-save.nvim" },
-  { 'jose-elias-alvarez/typescript.nvim' },
-  { 'mg979/vim-visual-multi' },
+  -- {
+  --   "pocco81/auto-save.nvim",
+  -- },
+  {
+    "jose-elias-alvarez/typescript.nvim",
+  },
+  { "mg979/vim-visual-multi" },
   { "Mofiqul/dracula.nvim" },
-  { 'editorconfig/editorconfig-vim' },
-  { 'lunarvim/lunar.nvim' },
+  { "editorconfig/editorconfig-vim" },
+  { "lunarvim/lunar.nvim" },
   { "morhetz/gruvbox" },
-  { 'jparise/vim-graphql' },
-  { 'f-person/git-blame.nvim' },
+  { "jparise/vim-graphql" },
+  { "f-person/git-blame.nvim" },
   {
     "brenoprata10/nvim-highlight-colors",
     config = function()
@@ -72,8 +74,7 @@ lvim.plugins = {
   { "ThePrimeagen/harpoon" },
 
   {
-    'phaazon/hop.nvim',
-    branch = 'v2',
+    'smoka7/hop.nvim',
     config = function()
       require('hop').setup()
     end
