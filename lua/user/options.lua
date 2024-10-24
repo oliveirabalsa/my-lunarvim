@@ -27,10 +27,21 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
+lvim.builtin.cmp.mapping["<Tab>"] = function(fallback)
+  local copilot_keys = vim.fn['copilot#Accept']()
+  if copilot_keys ~= '' then
+    vim.api.nvim_feedkeys(copilot_keys, 'i', true)
+  else
+    fallback()
+  end
+end
+
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.nvimtree.setup.filters.custom = {}
+lvim.builtin.cmp.mapping["<C-n>"] = lvim.builtin.cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+lvim.builtin.cmp.mapping["<C-p>"] = lvim.builtin.cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
 
 lvim.builtin.treesitter.ignore_install = {}
 lvim.builtin.treesitter.highlight.enabled = true

@@ -1,17 +1,7 @@
 lvim.plugins = {
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        suggestions = {
-          enabled = true,
-        },
-      })
-    end,
+    "github/copilot.vim",
   },
-
   { 'jose-elias-alvarez/typescript.nvim' },
   { 'mg979/vim-visual-multi' },
   { "Mofiqul/dracula.nvim" },
@@ -69,7 +59,18 @@ lvim.plugins = {
   { "tpope/vim-repeat" },
 
   { "ThePrimeagen/harpoon" },
-
+  -- {
+  --   "CopilotC-Nvim/CopilotChat.nvim",
+  --   branch = "canary",
+  --   dependencies = {
+  --     { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+  --     { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
+  --   },
+  --   build = "make tiktoken",        -- Only on MacOS or Linux
+  --   opts = {
+  --     debug = true,                 -- Enable debugging
+  --   },
+  -- },
   {
     'phaazon/hop.nvim',
     branch = 'v2',
@@ -77,7 +78,6 @@ lvim.plugins = {
       require('hop').setup()
     end
   },
-
   {
     'nvim-telescope/telescope-frecency.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim', 'kkharji/sqlite.lua' },
@@ -140,16 +140,15 @@ lvim.plugins = {
   end,
   ft = { "rust", "rs" },
 }
-
-table.insert(lvim.plugins, {
-  "zbirenbaum/copilot-cmp",
-  event = "InsertEnter",
-  dependencies = { "zbirenbaum/copilot.lua" },
-  config = function()
-    local ok, cmp = pcall(require, "copilot_cmp")
-    if ok then cmp.setup({}) end
-  end,
-})
+-- table.insert(lvim.plugins, {
+--   "zbirenbaum/copilot-cmp",
+--   event = "InsertEnter",
+--   dependencies = { "zbirenbaum/copilot.lua" },
+--   config = function()
+--     local ok, cmp = pcall(require, "copilot_cmp")
+--     if ok then cmp.setup({}) end
+--   end,
+-- })
 
 lvim.builtin.telescope.on_config_done = function(telescope)
   pcall(telescope.load_extension, "frecency")

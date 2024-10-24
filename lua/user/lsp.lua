@@ -48,6 +48,7 @@ formatters.setup({
       "graphql",
       "handlebars",
       "json",
+      "graphql",
     }
   },
   {
