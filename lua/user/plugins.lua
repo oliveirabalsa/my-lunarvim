@@ -59,18 +59,19 @@ lvim.plugins = {
   { "tpope/vim-repeat" },
 
   { "ThePrimeagen/harpoon" },
-  -- {
-  --   "CopilotC-Nvim/CopilotChat.nvim",
-  --   branch = "canary",
-  --   dependencies = {
-  --     { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-  --     { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
-  --   },
-  --   build = "make tiktoken",        -- Only on MacOS or Linux
-  --   opts = {
-  --     debug = true,                 -- Enable debugging
-  --   },
-  -- },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    dependencies = {
+      { "github/copilot.vim" },    -- or github/copilot.vim
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    build = "make tiktoken",       -- Only on MacOS or Linux
+    opts = {
+      debug = true,                -- Enable debugging
+      context = 'buffers',
+    },
+  },
   {
     'phaazon/hop.nvim',
     branch = 'v2',

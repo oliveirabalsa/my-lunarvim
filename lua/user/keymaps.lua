@@ -29,6 +29,8 @@ lvim.lsp.buffer_mappings.normal_mode["gD"] = {
   kind.cmp_kind.Reference .. " Type Definition"
 }
 
+lvim.keys.normal_mode["<C-;>"] = ":CopilotChat<CR>"
+
 lvim.lsp.buffer_mappings.normal_mode["gf"] = {
   ":Telescope frecency<cr>",
   kind.cmp_kind.Reference .. " Telescope Frecency"
